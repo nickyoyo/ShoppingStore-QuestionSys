@@ -28,13 +28,16 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // 商品功能相關
-Route::get('/Commodity/{searchname}',[commodityController::class, 'Commodity']);
+Route::get('/Commodity/personal/{account}',[commodityController::class, 'showAccountProduct']);
+Route::get('/Commodity/personal',[commodityController::class, 'searchAccountProduct']);
 Route::get('/Commodity',[commodityController::class, 'Commodity']);
+Route::post('/showC/{id}',[commodityController::class, 'showC'])->name('showC');
+Route::get('/changeC/{id}',[commodityController::class, 'changeC'])->name('changeC');
 Route::get('/create',[commodityController::class, 'create']);
 Route::get('/Upload',[commodityController::class, 'Upload'])->name('senddata');
 Route::get('/search',[commodityController::class, 'search']);
 Route::get('/buy',[commodityController::class, 'buy']);
-Route::delete('/del/{id}',[commodityController::class, 'deletedata'])->name('deldata');
+Route::delete('/del/{id}',[commodityController::class, 'deleteC'])->name('delC');
 
 // 問題功能相關
 Route::get('/UploadQ',[QuestionController::class, 'Upload'])->name('sendQ');

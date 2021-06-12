@@ -38,6 +38,15 @@
                 border:1px solid black;
                 border-collapse:collapse;
             }
+            .textw3 {
+                    width:3%;
+                    padding:10px 0px;
+                    color:#555;
+                    background-color:#fff;
+                    border:1px solid black;
+                    font-size:10px;
+                    font-weight:solid;
+            }
             .textw5 {
                     width:5%;
                     padding:10px 0px;
@@ -49,6 +58,15 @@
             }
             .textw10 {
                     width:10%;
+                    padding:10px 0px;
+                    color:#555;
+                    background-color:#fff;
+                    border:1px solid black;
+                    font-size:10px;
+                    font-weight:solid;
+            }
+            .textw12 {
+                    width:12%;
                     padding:10px 0px;
                     color:#555;
                     background-color:#fff;
@@ -83,6 +101,7 @@
             .text-a-left{
                 position: relative;
                 text-align:left;
+                padding: 5px;
             }
             .text-a-center{
                 text-align:center;

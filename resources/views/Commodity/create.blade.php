@@ -13,6 +13,9 @@
                <option value="Medicine">Medicine</option>
                <option value="Camp">Camp</option>
           </select></p>
+    @isset(Auth::user()->email)
+    <input type="account" id="account" name="account" value="{{Auth::user()->email}}" hidden></p>
+    @endisset
      <label for="price">Commodity Price:</label>
           <input type="number" id="price" name="price"></p>
      <label for="type">Commodity Productnumber:</label>
