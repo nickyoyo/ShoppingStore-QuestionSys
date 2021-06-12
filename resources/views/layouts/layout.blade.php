@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel YA</title>
+        <title>Laravel Store</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -86,6 +86,9 @@
             .text-a-center{
                 text-align:center;
             }
+            form {
+                display: inline;
+            }
         </style>
 @livewireStyles
 <link href="/css/main.css" rel="stylesheet">
@@ -95,7 +98,7 @@
 @livewireScripts
 
                     <ul>
-
+               
                         <a style="color:black" href="/">首頁</a>
                         <!-- Authentication Links -->
                         @guest
@@ -126,7 +129,7 @@
                         @endguest
                     </ul>    
                     @yield('content')   
-    <footer style="position: absolute;bottom:0px;width:100%; ">
+    <footer style="position: relative;bottom:0%;width:100%; ">
           Copyright 2021 Buy&Sell  
     </footer>
 </body>

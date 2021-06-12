@@ -1,11 +1,10 @@
-
 <?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBuycarTable extends Migration
+class CreateQuestionReportsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,15 +13,14 @@ class CreateBuycarTable extends Migration
      */
     public function up()
     {
-        Schema::create('buycar', function (Blueprint $table) {
+        Schema::create('question_reports', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('listnumber');
+            $table->string('topic');
+            $table->string('users_level');
             $table->string('type');
-            $table->string('name');
-            $table->integer('price');
-            $table->string('buyaccount');
-            $table->integer('buynumber');
+            $table->integer('status');
+            $table->string('description');
         });
     }
 
@@ -33,6 +31,6 @@ class CreateBuycarTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('buycar');
+        Schema::dropIfExists('question_reports');
     }
 }

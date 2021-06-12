@@ -3,19 +3,22 @@
 @section('content')
 <div class="store-show">
 <h1>Show for <h1>
-<form action="/search" method="GET
-" enctype="multipart/form-data">
+<form action="/search" method="GET" enctype="multipart/form-data">
 @csrf
      <label for="name">搜尋:</label>
           <input type="text" id="name" name="name" placeholder="請輸入想搜尋的產品名稱">&nbsp;
    <input type="submit" value="Send">
-</form><p>
+   
+</form> 
+    <form action="/Commodity" method="GET" enctype="multipart/form-data">
+        <button>全部顯示</button>
+    </form><p>
+
 @php $check=0; @endphp
 
 @isset($test)
 
 @if(count($test)>0)
-
     <table class="tableborder">
     <tr>
         <th class="bordertopic">選擇</th>
@@ -29,7 +32,7 @@
     @foreach($test as $test1)
     <tfoot>
     <tr>
-    <td> <button>Buy</button></td>
+    <td class="textw5 text-a-center"> <button>Buy</button></td>
     <td class="textw30 text-a-left">    
         <form action="{{ route('deldata', $test1->id) }}" method="POST">
         @csrf
@@ -52,8 +55,7 @@
     </tfoot>
     @endforeach
 </table>
-
-    @endif 
+@endif 
 @endisset
     
     

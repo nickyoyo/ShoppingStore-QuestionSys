@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\commodities;
 
-class indexController extends Controller
+class commodityController extends Controller
 {
     public function Upload(){
 
@@ -36,33 +36,23 @@ class indexController extends Controller
       }
     
     public function create(){
-        return view('tourism.create');
+        return view('Commodity.create');
     }
-    public function Medicine(){
-        $img = Image::make('https://images.pexels.com/photos/4273439/pexels-photo-4273439.jpeg')->resize(300, 200); // 這邊可以隨便用網路上的image取代
-        return $img->response('jpg');
-        // $doc = DB::table('commodities')->where('type','Medicine')->orderBy('price','asc')->first();
-        // return view('tourism.Medicine');
-    }
-    public function Camp(){
-        $doc = DB::table('commodities')->where('type','Camp')->orderBy('price','asc')->first();
-        return view('tourism.Camp');
-    }
-    public function Book(){
-        $doc = DB::table('commodities')->where('type','book')->orderBy('price','desc')->get();
+    public function Commodity(){
+        $doc = DB::table('commodities')->orderBy('price','desc')->get();
         //$doc = DB::table('commodities')->where('type', 'book')->last();
         //$doc = DB::table('commodities')->lists('name')->all();
-        return view('tourism.Book',['test' => $doc]);
+        return view('Commodity.Commodity',['test' => $doc]);
     }
     public function deletedata($id){
         $doc = commodities::findorFail($id);
         $doc -> delete();
-        return redirect('Book');
+        return redirect('Commodity');
     }
     public function search(){
         $n = request('name');
         $doc = DB::table('commodities')->where('name','LIKE','%'.$n.'%')->orderBy('price','desc')->get();
-        return view('tourism.Book',['test' => $doc]);
+   
+        return view('Commodity.Commodity',['test' => $doc]);
     }
-       
 }

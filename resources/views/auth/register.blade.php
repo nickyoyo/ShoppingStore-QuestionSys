@@ -61,6 +61,19 @@
                             </div>
                         </div>
                         <br>
+                        <div class="form-group row">
+                            <label for="user_level" class="col-md-4 col-form-label text-md-right">{{ __('User_level') }}</label>
+
+                            <div class="col-md-6">
+                            <select name="user_level" id="user_level">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                            </select>
+                            </div>
+                        </div>
+                        <br>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
