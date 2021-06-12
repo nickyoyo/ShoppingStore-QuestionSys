@@ -43,8 +43,7 @@
         @csrf
         &nbsp;
         {{$test1->name}}&nbsp;
-       
-        </form>
+        
         </form>
       
     <td class="textw5 text-a-center">{{$test1->price}}&nbsp;

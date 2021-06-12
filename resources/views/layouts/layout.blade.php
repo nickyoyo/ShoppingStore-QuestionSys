@@ -77,6 +77,7 @@
             .bordertopic{
                 font-size:10px;
                 font-weight:solid;
+
                 border:1px solid black;
             }
             .text-a-left{
@@ -98,7 +99,6 @@
 @livewireScripts
 
                     <ul>
-               
                         <a style="color:black" href="/">首頁</a>
                         <!-- Authentication Links -->
                         @guest

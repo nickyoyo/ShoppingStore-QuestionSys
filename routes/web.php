@@ -22,6 +22,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//註冊登入登出相關
+Auth::routes();
+//登入註冊後跳頁
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 // 商品功能相關
 Route::get('/Commodity/{searchname}',[commodityController::class, 'Commodity']);
 Route::get('/Commodity',[commodityController::class, 'Commodity']);
@@ -33,6 +38,8 @@ Route::delete('/del/{id}',[commodityController::class, 'deletedata'])->name('del
 
 // 問題功能相關
 Route::get('/UploadQ',[QuestionController::class, 'Upload'])->name('sendQ');
+Route::post('/showQ/{id}',[QuestionController::class, 'showQ'])->name('showQ');
+Route::get('/changeQ/{id}',[QuestionController::class, 'changeQ'])->name('changeQ');
 Route::get('/searchQ',[QuestionController::class, 'search']);
 Route::get('/Question/{searchname}',[commodityController::class, 'Question']);
 Route::get('/Question',[QuestionController::class, 'Question']);
@@ -40,6 +47,3 @@ Route::get('/createQ',[QuestionController::class, 'create']);
 Route::delete('/delQ/{id}',[QuestionController::class, 'deleteQ'])->name('delQ');
 
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

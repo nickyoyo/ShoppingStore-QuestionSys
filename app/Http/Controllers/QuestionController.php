@@ -34,6 +34,23 @@ class QuestionController extends Controller
         $doc -> delete();
         return redirect('Question');
     }
+    public function showQ($id){
+        $doc = DB::table('question_reports')->where('id',$id)->get();
+        return view('Question.changeQ',['test' => $doc]);
+    }
+    public function changeQ($id){
+        $data = DB::table('question_reports')
+              ->where('id',$id)
+              ->update([
+                'topic' => request('topic'),
+                'users_level' => request('users_level'),
+                'type' => request('type'),
+                'status' => request('status'),
+                'description' => request('description'),
+            ]); 
+       // $data->save();
+         return redirect('/Question');
+      }
     public function search(){
         $n = request('Qtype');
         $doc = DB::table('question_reports')->where('type','LIKE','%'.$n.'%')->get();
