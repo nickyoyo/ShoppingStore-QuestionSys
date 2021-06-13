@@ -23,7 +23,7 @@
            <input type="file" id="image" name="image" value="{{$test->image_path}}">  </p>
      <label for="type">Commodity Description:</label>
            <input type="text" id="description" name="description" value="{{$test->description}}">  </p>
-     
+           <input type="account" id="account" name="account" value="{{Auth::user()->email}}" hidden>
    <input type="submit" value="Send">
    
    </form>
