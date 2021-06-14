@@ -18,7 +18,7 @@ use Intervention\Image\Facades\Image;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function () { 
     return view('welcome');
 });
 
@@ -30,7 +30,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // 商品功能相關
 
 //顯示個人商品、搜尋個人商品
-
 Route::get('/Commodity/personal/{account}',[commodityController::class, 'showAccountProduct']);
 Route::get('/Commodity/personal',[commodityController::class, 'searchAccountProduct']);
 //顯示要修改商品、修改商品上傳
@@ -38,9 +37,10 @@ Route::post('/showC/{id}',[commodityController::class, 'showC'])->name('showC');
 Route::get('/changeC/{id}',[commodityController::class, 'changeC'])->name('changeC');
 //顯示所有商品
 Route::get('/Commodity',[commodityController::class, 'Commodity']);
-//新增商品、上船商品
+
+//新增商品、上傳商品
 Route::get('/create',[commodityController::class, 'create']);
-Route::get('/Upload',[commodityController::class, 'Upload'])->name('senddata');
+Route::post('/Upload',[commodityController::class, 'Upload'])->name('senddata');
 //搜尋商品
 Route::get('/search',[commodityController::class, 'search']);
 //刪除商品
@@ -50,7 +50,6 @@ Route::get('/buy',[commodityController::class, 'buy']);
 
 
 // 問題功能相關
-
 //顯示要修改問題、修改問題上傳
 Route::post('/showQ/{id}',[QuestionController::class, 'showQ'])->name('showQ');
 Route::get('/changeQ/{id}',[QuestionController::class, 'changeQ'])->name('changeQ');

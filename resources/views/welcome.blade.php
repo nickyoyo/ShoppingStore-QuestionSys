@@ -7,8 +7,10 @@
                 <div class="topic">
                     <img src="/img/Topic.JPG" width="600" height="400" alt="test">            
                </div>
-               <a href="/create" class="back"  style="color:black">新增商品</a><p>
-               <a href="/createQ" class="back"  style="color:black">新增問題回報</a>
+               @isset(Auth::user()->email)
+                <a href="/create" class="back"  style="color:black">新增商品</a><p>
+                <a href="/createQ" class="back"  style="color:black">新增問題回報</a>
+               @endisset
                <div class="topicwel" >
                     <a href="/Medicine" class="back"  style="color:black">Medicine</a>
                     @for($i=0 ; $i<10 ; $i++)

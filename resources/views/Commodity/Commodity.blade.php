@@ -45,7 +45,7 @@
     <td class="textw5 text-a-center">{{$test1->price}}&nbsp;
     <td class="textw5 text-a-center">{{$test1->productnum}}&nbsp;
     <td class="textw30 text-a-left">&nbsp;{{$test1->description}}<br>
-    <td class="textw20 text-a-left">&nbsp;1<br>
+    <td class="textw20 text-a-left">&nbsp;<img src="storage/{{$test1->image_path}}"><br>
     </tr>
     </tfoot>
     @endforeach

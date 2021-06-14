@@ -8,13 +8,24 @@ use App\Models\commodities;
 
 class commodityController extends Controller
 {
-    public function Upload(){
+    public function Upload(Request $request){
+
+        $name = request('account');
+        $imagePath = $request->file('image')->store("uploads/{$name}",'public');
+        $image = Image::make(public_path("storage/{$imagePath}"))->resize(300, null, 
+        function ($constraint) {
+            $constraint->aspectRatio();
+        });
+        $image->save(public_path("storage/{$imagePath}"), 60);
+
+        $image->save();
+
 
         commodities::create([
             'type' => request('type'),
             'name' => request('name'),
             'price' => request('price'),
-            'image_path' => request('image'),
+            'image_path' => $imagePath,
             'account' => request('account'),
             'productnum' => request('productnum'),
             'description' => request('description'),
