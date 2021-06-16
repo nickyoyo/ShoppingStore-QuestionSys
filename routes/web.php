@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\commodityController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\GoogleController;
 use Intervention\Image\Facades\Image;
 
 // usage inside a laravel route
@@ -32,9 +33,15 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //顯示個人商品、搜尋個人商品
 Route::get('/Commodity/personal/{account}',[commodityController::class, 'showAccountProduct']);
 Route::get('/Commodity/personal',[commodityController::class, 'searchAccountProduct']);
+
 //顯示要修改商品、修改商品上傳
 Route::post('/showC/{id}',[commodityController::class, 'showC'])->name('showC');
-Route::get('/changeC/{id}',[commodityController::class, 'changeC'])->name('changeC');
+Route::post('/changeC',[commodityController::class, 'changeC'])->name('changeC');
+
+//上傳-修改圖片
+Route::post('/changeImage/{id}',[commodityController::class, 'changeImage'])->name('changeImage');
+Route::post('/changeImage',[commodityController::class, 'changeImageupload'])->name('changeImageupload');
+
 //顯示所有商品
 Route::get('/Commodity',[commodityController::class, 'Commodity']);
 
@@ -62,4 +69,10 @@ Route::get('/UploadQ',[QuestionController::class, 'Upload'])->name('sendQ');
 //刪除問題
 Route::delete('/delQ/{id}',[QuestionController::class, 'deleteQ'])->name('delQ');
 
+Route::get('/google', function () { 
+    return view('tourism.index');
+});
+
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 

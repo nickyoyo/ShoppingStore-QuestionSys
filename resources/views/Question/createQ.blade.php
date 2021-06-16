@@ -21,7 +21,8 @@
    <input type="submit" value="Send">
      
    </form>
-   <a href="/" class="back" style="color:black;font-size:10px;">Back</a>
+   <input type ="button" onclick="history.back()" value="Back"></input>
+   <a href="/" class="back" style="color:black;font-size:10px;">回首頁</a>
    @for($i=0 ; $i<2 ; $i++)
          <br>
    @endfor

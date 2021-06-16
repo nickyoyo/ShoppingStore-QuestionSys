@@ -29,6 +29,13 @@
                 border:1px solid black;
                 color:#000000;
             }
+            .Topicword{
+                    padding:0px 10px;
+                    color:#555;
+                    background-color:#fff;
+                    font-size:20px;
+                    font-weight:solid;
+            }
             .login{
                 position: relative;
                 color:#000000;
@@ -108,6 +115,10 @@
             }
             form {
                 display: inline;
+            }
+            .buttonback {
+                width:90px;
+                height:25px;
             }
         </style>
 @livewireStyles

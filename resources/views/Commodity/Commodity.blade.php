@@ -58,5 +58,6 @@
     <h1>NO DATA<h1>
 @endif
 </div>
-<a href="/" class="back" style="color:black">Back</a>
+<input type ="button" onclick="history.back()" value="Back"></input>
+   <a href="/" class="back" style="color:black;font-size:10px;">回首頁</a>
 @endsection
