@@ -6,11 +6,11 @@
 @csrf
      <label for="name">請選擇想搜尋的問題類別:</label>
           <select name="Qtype" id="Qtype">
-             @if($Qtype!="A")
-               <option>{{$Qtype}}</option> 
-             @else
+             @if(isset($allcheck))
                <option>ALL</option> 
-             @endif
+             @else
+               <option>{{$Qtype}}</option> 
+              @endif
                <option value="A">A</option>
                <option value="B">B</option>
                <option value="C">C</option>
@@ -18,10 +18,16 @@
    <input type="submit" value="Send">
 </form>
 <form action="/Question" method="GET" enctype="multipart/form-data">
+      <input type="text" id="all" name="all" value="1" hidden>
         <button>全部顯示</button>
 </form><p>
 @php $check=0; @endphp
-
+<div>
+問題統計=>
+<td class="countdata">A : {{count($docTA)}}&nbsp;
+<td class="countdata">B : {{count($docTB)}}&nbsp;
+<td class="countdata">C : {{count($docTC)}}&nbsp;
+</div>
 @isset($test)
 
 @if(count($test)>0)
@@ -60,7 +66,13 @@
     <td class="textw30 text-a-left">&nbsp;
     {{$test1->topic}}&nbsp;
     <td class="textw5 text-a-center">{{$test1->type}}&nbsp;
-    <td class="textw5 text-a-center">{{$test1->status}}&nbsp;
+    <td class="textw5 text-a-center">
+        @if($test1->status==1)
+          Processing
+        @elseif($test1->status==2)
+          Complete
+        @endif
+        &nbsp;
     <td class="textw30 text-a-left">&nbsp;{{$test1->description}}<br>
     </tr>
     </tfoot>

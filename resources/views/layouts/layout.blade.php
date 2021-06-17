@@ -120,6 +120,11 @@
                 width:90px;
                 height:25px;
             }
+            .countdata{
+                color:#555;
+                font-weight:solid;
+                font-size:20px;
+            }
         </style>
 @livewireStyles
 <link href="/css/main.css" rel="stylesheet">

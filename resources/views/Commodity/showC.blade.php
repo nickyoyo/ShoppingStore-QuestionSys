@@ -36,6 +36,8 @@
     <tr>
         <td class="textw5 text-a-left">  
         <form action="{{ route('delC', $test1->id) }}" method="POST">
+        <input type="text" id="old_image" name="old_image" value="{{$test1->image_path}}" hidden></p>
+        <input type="account" id="account" name="account" value="{{Auth::user()->email}}" hidden>
         @csrf
         @method('Delete')
         <button>Delete</button>

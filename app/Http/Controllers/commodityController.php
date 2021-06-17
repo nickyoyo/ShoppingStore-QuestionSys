@@ -59,9 +59,17 @@ class commodityController extends Controller
     }
 
     public function deleteC($id){
+        $account = request('account');
         $doc = commodities::findorFail($id);
+        $image_path =  "public/" .request('old_image');
+        if (Storage::exists($image_path)) {
+            Storage::delete($image_path);
+        } 
         $doc -> delete();
-        return redirect('Commodity');
+
+
+        $doc = DB::table('commodities')->where('account',$account)->orderBy('price','desc')->get();
+        return view('Commodity.showC',['test' => $doc]);
     }
 
     public function search(){
