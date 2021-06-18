@@ -19,7 +19,7 @@ class CreateQuestionReportsTable extends Migration
             $table->string('topic');
             $table->string('users_level');
             $table->string('type');
-            $table->integer('status');
+            $table->string('status');
             $table->string('description');
         });
     }

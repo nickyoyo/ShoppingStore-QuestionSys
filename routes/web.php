@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\commodityController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\ExcelController;
 use Intervention\Image\Facades\Image;
+
+
 
 // usage inside a laravel route
 
@@ -63,6 +66,7 @@ Route::get('/changeQ/{id}',[QuestionController::class, 'changeQ'])->name('change
 //顯示所有問題、顯示搜尋問題
 Route::get('/searchQ',[QuestionController::class, 'search']);
 Route::get('/Question',[QuestionController::class, 'Question']);
+Route::get('/Question',[QuestionController::class, 'Question']);
 //新增問題、上傳資料
 Route::get('/createQ',[QuestionController::class, 'create']);
 Route::get('/UploadQ',[QuestionController::class, 'Upload'])->name('sendQ');
@@ -73,6 +77,10 @@ Route::get('/google', function () {
     return view('tourism.index');
 });
 
+//串接GOOGLE API，登入
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
+
+Route::post('excel/export',[ExcelController::class, 'export'])->name('exportexcel');;
+Route::get('excel/import',[ExcelController::class, 'import']);
 

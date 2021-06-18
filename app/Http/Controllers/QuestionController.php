@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 use Intervention\Image\Facades\Image;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\question_reports;
 
 class QuestionController extends Controller
@@ -15,7 +15,7 @@ class QuestionController extends Controller
             'topic' => request('topic'),
             'users_level' => request('users_level'),
             'type' => request('type'),
-            'status' => 1,
+            'status' => "waiting",
             'description' => request('description'),
         ]); 
  
@@ -31,6 +31,7 @@ class QuestionController extends Controller
         $docTA = DB::table('question_reports')->where('type','A')->get();
         $docTB = DB::table('question_reports')->where('type','B')->get();
         $docTC = DB::table('question_reports')->where('type','C')->get();
+        
         return view('Question.Question',['test' => $doc, 'Qtype' => 'A', 'docTA' => $docTA, 'docTB' => $docTB, 'docTC' => $docTC , 'allcheck' => $All]);
     }
     public function deletedata($id){

@@ -1,0 +1,280 @@
+<div class="store-show">
+    <table class="tableborder">
+    <tr>
+        <th class="bordertopic">問題名稱</th>
+        <th class="bordertopic">問題類別</th>
+        <th class="bordertopic">問題狀態</th>
+        <th class="bordertopic">描述</th>
+    </tr>
+        <tfoot>
+    <tr>
+   
+    <td class="textw30 text-a-left">&nbsp;
+    顯示異常&nbsp;
+    <td class="textw5 text-a-center">C&nbsp;
+    <td class="textw5 text-a-center">
+                  Processing
+                &nbsp;
+    <td class="textw30 text-a-left">&nbsp;閃退<br>
+    </tr>
+    </tfoot>
+        <tfoot>
+    <tr>
+   
+    <td class="textw30 text-a-left">&nbsp;
+    地圖BUG&nbsp;
+    <td class="textw5 text-a-center">B&nbsp;
+    <td class="textw5 text-a-center">
+                  Processing
+                &nbsp;
+    <td class="textw30 text-a-left">&nbsp;123<br>
+    </tr>
+    </tfoot>
+        <tfoot>
+    <tr>
+   
+    <td class="textw30 text-a-left">&nbsp;
+    計算錯誤疏失&nbsp;
+    <td class="textw5 text-a-center">A&nbsp;
+    <td class="textw5 text-a-center">
+                  Complete
+                &nbsp;
+    <td class="textw30 text-a-left">&nbsp;1+1=3<br>
+    </tr>
+    </tfoot>
+        <tfoot>
+    <tr>
+   
+    <td class="textw30 text-a-left">&nbsp;
+    計算錯誤&nbsp;
+    <td class="textw5 text-a-center">A&nbsp;
+    <td class="textw5 text-a-center">
+                  Processing
+                &nbsp;
+    <td class="textw30 text-a-left">&nbsp;背包計數錯誤<br>
+    </tr>
+    </tfoot>
+        <tfoot>
+    <tr>
+   
+    <td class="textw30 text-a-left">&nbsp;
+    計算錯誤&nbsp;
+    <td class="textw5 text-a-center">A&nbsp;
+    <td class="textw5 text-a-center">
+                  Processing
+                &nbsp;
+    <td class="textw30 text-a-left">&nbsp;村莊人數計數問題<br>
+    </tr>
+    </tfoot>
+    </table>
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Laravel Store</title>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+         
+            .topic{
+                position: relative;
+                margin-top:10px;
+                margin-left:350px;
+            }
+            .topicwel{
+                position: relative;
+                margin-left:470px;
+                margin-top:20px;
+                color:#000000;
+            }
+            .topictype{
+                position: relative;
+                margin-left:470px;
+                margin-top:20px;
+                border:1px solid black;
+                color:#000000;
+            }
+            .Topicword{
+                    padding:0px 10px;
+                    color:#555;
+                    background-color:#fff;
+                    font-size:20px;
+                    font-weight:solid;
+            }
+            .login{
+                position: relative;
+                color:#000000;
+            }
+            .tableborder{
+                width:100%;
+                border:1px solid black;
+                border-collapse:collapse;
+            }
+            .textw3 {
+                    width:3%;
+                    padding:10px 0px;
+                    color:#555;
+                    background-color:#fff;
+                    border:1px solid black;
+                    font-size:10px;
+                    font-weight:solid;
+            }
+            .textw5 {
+                    width:5%;
+                    padding:10px 0px;
+                    color:#555;
+                    background-color:#fff;
+                    border:1px solid black;
+                    font-size:10px;
+                    font-weight:solid;
+            }
+            .textw10 {
+                    width:10%;
+                    padding:10px 0px;
+                    color:#555;
+                    background-color:#fff;
+                    border:1px solid black;
+                    font-size:10px;
+                    font-weight:solid;
+            }
+            .textw12 {
+                    width:12%;
+                    padding:10px 0px;
+                    color:#555;
+                    background-color:#fff;
+                    border:1px solid black;
+                    font-size:10px;
+                    font-weight:solid;
+            }
+            .textw20 {
+                width:20%;
+                padding:10px 0px;
+                color:#555;
+                background-color:#fff;
+                border:1px solid black;
+                font-size:10px;
+                font-weight:solid;
+            }
+            .textw30 {
+                width:30%;
+                padding:10px 0px;
+                color:#555;
+                background-color:#fff;
+                border:1px solid black;
+                font-size:10px;
+                font-weight:solid;
+            }
+            .bordertopic{
+                font-size:10px;
+                font-weight:solid;
+
+                border:1px solid black;
+            }
+            .text-a-left{
+                position: relative;
+                text-align:left;
+                padding: 5px;
+            }
+            .text-a-center{
+                text-align:center;
+            }
+            form {
+                display: inline;
+            }
+            .buttonback {
+                width:90px;
+                height:25px;
+            }
+            .countdata{
+                color:#555;
+                font-weight:solid;
+                font-size:20px;
+            }
+        </style>
+<!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {
+        display: none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+<link href="/css/main.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Livewire Scripts -->
+
+<script src="/livewire/livewire.js?id=54d078b2ce39327a1702" data-turbo-eval="false" data-turbolinks-eval="false"></script>
+<script data-turbo-eval="false" data-turbolinks-eval="false">
+    if (window.livewire) {
+	    console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+	}
+
+    window.livewire = new Livewire();
+    window.livewire.devTools(true);
+    window.Livewire = window.livewire;
+    window.livewire_app_url = '';
+    window.livewire_token = 'ru4ikvUQfGYKyeuc2RBIf9l0kd1yFZ7C6YkNdODV';
+
+	/* Make sure Livewire loads first. */
+	if (window.Alpine) {
+	    /* Defer showing the warning so it doesn't get buried under downstream errors. */
+	    document.addEventListener("DOMContentLoaded", function () {
+	        setTimeout(function() {
+	            console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\\n\\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+	        })
+	    });
+	}
+
+	/* Make Alpine wait until Livewire is finished rendering to do its thing. */
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+        window.livewire.start();
+    });
+</script>
+
+                    <ul>
+                        <a style="color:black" href="/">首頁</a>
+                        <!-- Authentication Links -->
+                                                        <a style="color:black">
+                                    KAI-CHENG HUANG
+                                </a>
+                                    <a style="color:black;font-weight:bold; border:1px solid black;" href="http://127.0.0.1:8000/logout"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
+
+                                    <form id="logout-form" action="http://127.0.0.1:8000/logout" method="POST" class="d-none">
+                                        <input type="hidden" name="_token" value="ru4ikvUQfGYKyeuc2RBIf9l0kd1yFZ7C6YkNdODV">                                    </form>
+                                            </ul>    
+                       
+    <footer style="position: relative;bottom:0%;width:100%; ">
+          Copyright 2021 Buy&Sell  
+    </footer>
+</body>
+</html>

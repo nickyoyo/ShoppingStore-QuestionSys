@@ -18,7 +18,12 @@
      <label for="price">Question users_level:</label>
           <input type="number" id="users_level" name="users_level" value="{{$test->users_level}}" disable></p>
      <label for="price">Question status:</label>
-          <input type="number" id="status" name="status" value="{{$test->status}}"></p>
+     <select name="status" id="status">
+               <option value="{{$test->status}}">{{$test->status}}</option>
+               <option value="Waiting">Waiting</option>
+               <option value="Processing">Processing</option>
+               <option value="Complete">Complete</option>
+          </select></p>
      <label for="type">Question Description:</label>
            <input type="text" id="description" name="description" value="{{$test->description}}">  </p>
      

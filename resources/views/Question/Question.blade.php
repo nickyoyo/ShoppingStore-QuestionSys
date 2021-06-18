@@ -20,7 +20,12 @@
 <form action="/Question" method="GET" enctype="multipart/form-data">
       <input type="text" id="all" name="all" value="1" hidden>
         <button>全部顯示</button>
-</form><p>
+</form>
+<form action="{{ route('exportexcel') }}" method="POST">
+        @csrf
+        <button>Export Excel</button>
+        </form>
+<p>
 @php $check=0; @endphp
 <div>
 問題統計=>
@@ -56,7 +61,7 @@
         <button>Delete</button>
         </form>
         &nbsp;&nbsp;
-        <form action="{{ route('showQ', $test1->id , Auth::user()->email) }}" method="POST">
+        <form action="{{ route('showQ', $test1->id) }}" method="POST">
         @csrf
         <button>Modify</button>
         @endif
@@ -66,13 +71,7 @@
     <td class="textw30 text-a-left">&nbsp;
     {{$test1->topic}}&nbsp;
     <td class="textw5 text-a-center">{{$test1->type}}&nbsp;
-    <td class="textw5 text-a-center">
-        @if($test1->status==1)
-          Processing
-        @elseif($test1->status==2)
-          Complete
-        @endif
-        &nbsp;
+    <td class="textw5 text-a-center">{{$test1->status}}&nbsp;
     <td class="textw30 text-a-left">&nbsp;{{$test1->description}}<br>
     </tr>
     </tfoot>
