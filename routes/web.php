@@ -30,9 +30,16 @@ Route::get('/', function () {
 Auth::routes();
 //登入註冊後跳頁
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//登出後跳頁
+Route::get('/logout', function () { 
+    return view('welcome');
+});
+//串接GOOGLE API，登入
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
+
 
 // 商品功能相關
-
 //顯示個人商品、搜尋個人商品
 Route::get('/Commodity/personal/{account}',[commodityController::class, 'showAccountProduct']);
 Route::get('/Commodity/personal',[commodityController::class, 'searchAccountProduct']);
@@ -72,15 +79,7 @@ Route::get('/createQ',[QuestionController::class, 'create']);
 Route::get('/UploadQ',[QuestionController::class, 'Upload'])->name('sendQ');
 //刪除問題
 Route::delete('/delQ/{id}',[QuestionController::class, 'deleteQ'])->name('delQ');
-
-Route::get('/google', function () { 
-    return view('tourism.index');
-});
-
-//串接GOOGLE API，登入
-Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
-Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
-
+//輸出所有問題為excel檔.xlsx
 Route::post('excel/export',[ExcelController::class, 'export'])->name('exportexcel');;
 Route::get('excel/import',[ExcelController::class, 'import']);
 
