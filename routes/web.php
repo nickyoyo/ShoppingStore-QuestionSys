@@ -5,6 +5,8 @@ use App\Http\Controllers\commodityController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\ExcelController;
+use App\Http\Controllers\buycarController;
+use App\Http\Controllers\OrdersController;
 use Intervention\Image\Facades\Image;
 
 
@@ -63,7 +65,8 @@ Route::get('/search',[commodityController::class, 'search']);
 //刪除商品
 Route::delete('/del/{id}',[commodityController::class, 'deleteC'])->name('delC');
 
-Route::get('/buy',[commodityController::class, 'buy']);
+// //購物車
+// Route::get('/buy',[commodityController::class, 'buy']);
 
 
 // 問題功能相關

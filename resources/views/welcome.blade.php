@@ -12,7 +12,7 @@
                 <a href="/createQ" class="back"  style="color:black">新增問題回報</a>
                @endisset
                <div class="topicwel" >
-                    <a href="/Medicine" class="back"  style="color:black">Medicine</a>
+                    <a href="/NEW" class="back"  style="color:black">NEW</a>
                     @for($i=0 ; $i<10 ; $i++)
                         &nbsp;
                     @endfor
@@ -22,7 +22,7 @@
                     @for($i=0 ; $i<10 ; $i++)
                         &nbsp;
                     @endfor
-                    <a href="/Commodity" class="back"  style="color:black">商品列表</a>
+                    <a href="/Commodity" class="back"  style="color:black">購物網站</a>
                     <!-- 查詢商品、刪除商品、購買商品 -->
                </div>
              
