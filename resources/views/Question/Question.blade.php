@@ -52,8 +52,8 @@
     @foreach($test as $test1)
     <tfoot>
     <tr>
-    <td class="textw10 text-a-left">
         @isset(Auth::user()->users_level)
+        <td class="textw10 text-a-left">
         @if(Auth::user()->users_level == $test1->users_level)    
         <form action="{{ route('delQ', $test1->id) }}" method="POST">
         @csrf
@@ -65,9 +65,9 @@
         @csrf
         <button>Modify</button>
         @endif
-        @endisset
         </form>
-        
+        @endisset
+
     <td class="textw30 text-a-left">&nbsp;
     {{$test1->topic}}&nbsp;
     <td class="textw5 text-a-center">{{$test1->type}}&nbsp;
