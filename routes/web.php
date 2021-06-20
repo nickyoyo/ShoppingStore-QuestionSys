@@ -67,7 +67,7 @@ Route::delete('/del/{id}',[commodityController::class, 'deleteC'])->name('delC')
 
 // //購物車
 // Route::get('/buy',[commodityController::class, 'buy']);
-
+Route::get('/shop',App\Http\Livewire\ShopPage::class);
 
 // 問題功能相關
 //顯示要修改問題、修改問題上傳
