@@ -1,8 +1,7 @@
-@extends('layouts.layout')
+@extends('layouts.master')
 
 @section('content')
 <div class="store-show">
-<h1>Show for <h1>
 <form action="/Commodity/personal" method="GET" enctype="multipart/form-data">
 @csrf
      <label for="name">搜尋:</label>
@@ -16,7 +15,7 @@
     </form> 
     <form action="/Commodity/personal/{{Auth::user()->email}}" method="GET" enctype="multipart/form-data">
         <button>顯示個人商品</button>
-    </form><p>
+    </form><p><p>
 @php $check=0; @endphp
 
 @isset($test)

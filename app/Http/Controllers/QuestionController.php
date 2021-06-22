@@ -32,7 +32,7 @@ class QuestionController extends Controller
         $docTB = DB::table('question_reports')->where('type','B')->get();
         $docTC = DB::table('question_reports')->where('type','C')->get();
         
-        return view('Question.Question',['test' => $doc, 'Qtype' => 'A', 'docTA' => $docTA, 'docTB' => $docTB, 'docTC' => $docTC , 'allcheck' => $All]);
+        return view('Question.Question',['test' => $doc, 'Qtype' => 'ALL', 'docTA' => $docTA, 'docTB' => $docTB, 'docTC' => $docTC , 'allcheck' => $All]);
     }
     public function deletedata($id){
         $doc = question_reports::findorFail($id);

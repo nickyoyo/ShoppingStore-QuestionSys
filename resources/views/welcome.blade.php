@@ -12,7 +12,7 @@
                 <a href="/createQ" class="back"  style="color:black">新增問題回報</a>
                @endisset
                <div class="topicwel" >
-                    <a href="/NEW" class="back"  style="color:black">NEW</a>
+                    <a href="/Cart" class="back"  style="color:black">TTest car</a>
                     @for($i=0 ; $i<10 ; $i++)
                         &nbsp;
                     @endfor

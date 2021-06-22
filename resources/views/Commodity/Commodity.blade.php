@@ -1,8 +1,7 @@
-@extends('layouts.layout')
+@extends('layouts.master')
 
 @section('content')
 <div class="store-show">
-<h1>Show for <h1>
 <form action="/search" method="GET" enctype="multipart/form-data">
 @csrf
      <label for="name">搜尋:</label>
@@ -19,7 +18,7 @@
         <button>顯示個人商品</button>
     </form>
     @endisset
-    <p>
+    <p><p>
 
 @php $check=0; @endphp
 
@@ -40,12 +39,15 @@
     <tfoot>
     <tr>
     <td class="textw3 text-a-left">
-    <button>Buy</button></td>    
+    <form action="{{ route('additem', $test1->id) }}" method="POST">
+        @csrf
+        <button>Buy</button>
+        </form>
     <td class="textw12 text-a-center">{{$test1->name}}&nbsp; 
     <td class="textw5 text-a-center">{{$test1->price}}&nbsp;
     <td class="textw5 text-a-center">{{$test1->productnum}}&nbsp;
     <td class="textw30 text-a-left">&nbsp;{{$test1->description}}<br>
-    <td class="textw20 text-a-left">&nbsp;<img src="storage/{{$test1->image_path}}"><br>
+    <td class="textw20 text-a-left">&nbsp;<img src="storage/{{$test1->image_path}}" width="180" height="220"><br>
     </tr>
     </tfoot>
     @endforeach

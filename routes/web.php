@@ -7,6 +7,7 @@ use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\buycarController;
 use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\CartController;
 use Intervention\Image\Facades\Image;
 
 
@@ -66,7 +67,9 @@ Route::get('/search',[commodityController::class, 'search']);
 Route::delete('/del/{id}',[commodityController::class, 'deleteC'])->name('delC');
 
 // //購物車
-// Route::get('/buy',[commodityController::class, 'buy']);
+Route::get('/Cart',[CartController::class, 'showCart']);
+Route::post('/addProduct/{productId}',[CartController::class, 'addItem'])->name('additem');
+Route::get('/removeItem/{productId}', [CartController::class, 'removeItem']);
 
 
 // 問題功能相關
