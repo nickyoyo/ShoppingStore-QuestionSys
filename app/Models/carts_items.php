@@ -12,6 +12,6 @@ class carts_items extends Model
         }
         public function commodity()
         {
-                return $this->belongsTo('App\Models\commodities');
+                return $this->belongsTo('App\Models\commodities', 'product_id');
         }
 }

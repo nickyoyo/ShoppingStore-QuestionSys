@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class commodities extends Model
 {
    // protected $guarded = [];
-    public $fillable = ['type','name','filename','price','image_path','account','productnum','description'];
+   protected $fillable = ['type','name','filename','price','image_path','account','productnum','description'];
 }

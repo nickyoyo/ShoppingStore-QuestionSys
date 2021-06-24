@@ -69,6 +69,8 @@ Route::delete('/del/{id}',[commodityController::class, 'deleteC'])->name('delC')
 // //購物車
 Route::get('/Cart',[CartController::class, 'showCart']);
 Route::post('/addProduct/{productId}',[CartController::class, 'addItem'])->name('additem');
+Route::post('/addbuttom/{productId}',[CartController::class, 'addbuttom'])->name('addbuttom');
+Route::post('/minusbuttom/{productId}',[CartController::class, 'minusbuttom'])->name('minusbuttom');
 Route::get('/removeItem/{productId}', [CartController::class, 'removeItem']);
 
 
