@@ -10,7 +10,7 @@ class carts_items extends Model
         {
                 return $this->belongsTo('App\Models\Carts');
         }
-        public function commodities()
+        public function commodity()
         {
                 return $this->belongsTo('App\Models\commodities');
         }
