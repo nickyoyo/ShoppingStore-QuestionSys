@@ -6,21 +6,19 @@
 
 @section('content')
 
-@if(Session::has('cart'))   
-
-        <div class="row">
-            <div class="col-sm-12 col-md-10 col-md-offset-1">
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th>商品</th>
-                        <th class="text-center">單價</th>
-                        <th class="text-center">數量</th>
-                        <th class="text-center">小計</th>
-                        <th>操作</th>
-                    </tr>
-                    </thead>
-                    <tbody>         
+    <div class="row">
+        <div class="col-sm-12 col-md-10 col-md-offset-1">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>商品</th>
+                    <th class="text-center">單價</th>
+                    <th class="text-center">數量</th>
+                    <th class="text-center">小計</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
                 @foreach($items as $item)
                     <tr>
                         <td class="col-sm-8 col-md-6">
@@ -61,13 +59,11 @@
                     <td class="text-right"><h3><strong>${{$total}}</strong></h3></td>
                 </tr>
                 <tr>
-
                     <td>   </td>
                     <td>   </td>
                     <td>   </td>
                     <td>
-
-                    <a href="/Commodity"> <button type="button" class="btn btn-default">
+                        <a href="/Commodity"> <button type="button" class="btn btn-default">
                                 <span class="fa fa-shopping-cart"></span> 繼續購買
                             </button>
                         </a></td>
@@ -76,20 +72,9 @@
                             總結 <span class="fa fa-play"></span>
                               </button></a> </td>
                 </tr>
-@else 
-<td>
-                    <div class="media">
-                             <h4 class="media-heading">購物車沒有商品</h4>
-                    </div>
-                    <a href="/Commodity"> <button type="button" class="btn btn-default">
-                                <span class="fa fa-shopping-cart"></span> 繼續購買
-                            </button>
-                        </a></td>
-
-@endif
-
                 </tbody>
             </table>
         </div>
     </div>
+
 @endsection

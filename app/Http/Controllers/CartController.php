@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use App\Models\Carts;
 use App\Models\carts_items;
 use App\Models\commodities;
@@ -92,7 +93,12 @@ class CartController extends Controller
             $cart->state ='1';
             $cart->save();
         }
-
+        if (count($cart->cartitems) > 0) {
+            Session::put('cart', $cart);
+        }
+        else{
+            Session::forget('cart');
+        }
         $items = $cart->cartitems;
         
         $total = 0;
