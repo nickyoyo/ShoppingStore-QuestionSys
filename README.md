@@ -1,9 +1,9 @@
 # Laravel 8 後端作品
 
 ## 使用技術
--HTML，CSS，PHP
--Laravel 8 Framework
--MySQL Database
+*HTML，CSS，PHP
+*Laravel 8 Framework
+*MySQL Database
 
 ## 概要
 目前網站提供的兩種系統，購物網站以及問題整合系統。
