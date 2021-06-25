@@ -32,12 +32,14 @@
                             </div></td>
                         <td class="col-sm-1 col-md-1" style="text-align: center">{{$item->commodity->price}}</td>
                         <td class="col-sm-1 col-md-1 text-center">
-                                <form action="{{ route('minusbuttom', $item->id) }}" method="POST">
+                      
+                                 <form action="{{ route('minusbuttom', $item->commodity->id) }}" method="POST">
                                                 @csrf
                                                 <button>-</button>
                                                 </form>
+               
                                     {{$item->qty}}
-                                <form action="{{ route('addbuttom', $item->id) }}" method="POST">
+                                <form action="{{ route('addbuttom', $item->commodity->id) }}" method="POST">
                                                 @csrf
                                                 <button>+</button>
                                                 </form>
@@ -68,9 +70,9 @@
                             </button>
                         </a></td>
                     <td>
-                        <button type="button" class="btn btn-success">
+                    <a href="/Commodity">  <button type="button" class="btn btn-success">
                             總結 <span class="fa fa-play"></span>
-                        </button></td>
+                              </button></a> </td>
                 </tr>
                 </tbody>
             </table>

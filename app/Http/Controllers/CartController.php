@@ -18,16 +18,18 @@ class CartController extends Controller
     }
     public function minusbuttom($productId)
     {
-        $qty = DB::table('carts_items')->where('product_id', $productId)->first();
+        $cart = DB::table('carts')->where('user_id', Auth::user()->id)->where('state', '1')->first();
+        $qty = DB::table('carts_items')->where('carts_id', $cart->id)->where('product_id', $productId)->first();
             $count = $qty->qty;
             $count--;
             if( $count == 0){
-                carts_items::destroy($productId);
+                carts_items::destroy($qty->id);
                 return redirect('/Cart');
             }
             else{
                 $data = DB::table('carts_items')
                 ->where('product_id', $productId)
+                ->where('carts_id', $cart->id)
                 ->update([
                   'qty' => $count,
               ]); 
@@ -36,11 +38,13 @@ class CartController extends Controller
     }
     public function addbuttom($productId)
     {
-        $qty = DB::table('carts_items')->where('product_id', $productId)->first();
+        $cart = DB::table('carts')->where('user_id', Auth::user()->id)->where('state', '1')->first();
+        $qty = DB::table('carts_items')->where('carts_id', $cart->id)->where('product_id', $productId)->first();
             $count = $qty->qty;
             $count++;
                 $data = DB::table('carts_items')
                 ->where('product_id', $productId)
+                ->where('carts_id', $cart->id)
                 ->update([
                   'qty' => $count,
               ]);  
@@ -50,7 +54,7 @@ class CartController extends Controller
     public function addItem($productId)
     {
         $cart = DB::table('carts')->where('user_id', Auth::user()->id)->where('state', '1')->first();
-        $qty = DB::table('carts_items')->where('product_id', $productId)->first();
+        $qty = DB::table('carts_items')->where('carts_id', $cart->id)->where('product_id', $productId)->first();
         if (!$cart) {
             $cart = new Carts();
             $cart->user_id = Auth::user()->id;
@@ -69,6 +73,7 @@ class CartController extends Controller
             $count++;
             $data = DB::table('carts_items')
               ->where('product_id', $productId)
+              ->where('carts_id', $cart->id)
               ->update([
                 'qty' => $count,
             ]); 
@@ -79,11 +84,12 @@ class CartController extends Controller
 
     public function showCart()
     {
-        $cart = Carts::where('user_id', Auth::user()->id)->first();
+        $cart = Carts::where('user_id', Auth::user()->id)->where('state', '1')->first();
 
         if (!$cart) {
             $cart = new Carts();
             $cart->user_id = Auth::user()->id;
+            $cart->state ='1';
             $cart->save();
         }
 
@@ -92,7 +98,7 @@ class CartController extends Controller
         $total = 0;
         foreach ($items as $item) {
             $Cprice = DB::table('commodities')->where('id', $item->product_id)->first();
-            $qty = DB::table('carts_items')->where('product_id', $item->product_id)->first();
+            $qty = DB::table('carts_items')->where('carts_id', $cart->id)->where('product_id', $item->product_id)->first();
             $total += ($qty->qty)*($Cprice->price);
         }
 

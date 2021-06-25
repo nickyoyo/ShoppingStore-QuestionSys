@@ -146,10 +146,11 @@
                     @else
                         <li><a href="/order">我的訂單 <span class="fa fa-briefcase"></span></a></li>
                         <li><a href="/Cart">購物車 <span class="fa fa-shopping-cart"></span></a></li>
+                        <li><a>{{ Auth::user()->name }}   <span class="d-none"></span></a></li>
                         <li><a  href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                      {{ __('Logout') }}
                                     
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
