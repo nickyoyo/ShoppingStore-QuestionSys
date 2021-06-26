@@ -92,7 +92,7 @@ class OrderController extends Controller
             ]); 
         return redirect('http://127.0.0.1:8000/');
     }
-
+ 
     public function redirectFromECpay () {
         $data = DB::table('orders')
               ->where('uuid', 'a992a645117e4ffa')
