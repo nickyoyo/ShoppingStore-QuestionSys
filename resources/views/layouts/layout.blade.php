@@ -131,7 +131,7 @@
 </head>
 <body>
 
-@livewireScripts
+
 
                     <ul>
                         <a style="color:black" href="/">首頁</a>
@@ -151,6 +151,7 @@
                         @else
                                 <a style="color:black">
                                     {{ Auth::user()->name }}
+                                 
                                 </a>
                                     <a style="color:black;font-weight:bold; border:1px solid black;" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -163,6 +164,7 @@
                                     </form>
                         @endguest
                     </ul>    
+                    @livewireScripts
                     @yield('content')   
     <footer style="position: relative;bottom:0%;width:100%; ">
           Copyright 2021 Buy&Sell  

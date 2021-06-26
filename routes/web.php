@@ -68,6 +68,7 @@ Route::get('/search',[commodityController::class, 'search']);
 Route::delete('/del/{id}',[commodityController::class, 'deleteC'])->name('delC');
 
 // //購物車
+<<<<<<< HEAD
 Route::get('/Cart',[CartController::class, 'showCart']);
 Route::post('/addProduct/{productId}',[CartController::class, 'addItem'])->name('additem');
 Route::post('/addbuttom/{productId}',[CartController::class, 'addbuttom'])->name('addbuttom');
@@ -83,6 +84,10 @@ Route::post('/orderdetail', [OrderController::class, 'orderdetail']);
 Route::post('/callback', [OrderController::class, 'callback']);
 Route::get('/success', [OrderController::class, 'redirectFromECpay']);
 
+=======
+// Route::get('/buy',[commodityController::class, 'buy']);
+Route::get('/shop',App\Http\Livewire\ShopPage::class);
+>>>>>>> 6346c73b8b9d85fa1a437092a2c73baf65580493
 
 // 問題功能相關
 //顯示要修改問題、修改問題上傳
