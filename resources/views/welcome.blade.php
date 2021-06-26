@@ -12,11 +12,8 @@
                 <a href="/createQ" class="back"  style="color:black">新增問題回報</a>
                @endisset
                <div class="topicwel" >
-<<<<<<< HEAD
-                    <a href="/Cart" class="back"  style="color:black">TTest car</a>
-=======
-                    <a href="/shop" class="back"  style="color:black">Test Buycar</a>
->>>>>>> 6346c73b8b9d85fa1a437092a2c73baf65580493
+
+                    <a href="/Cart" class="back"  style="color:black">TTest car</a> 
                     @for($i=0 ; $i<10 ; $i++)
                         &nbsp;
                     @endfor
