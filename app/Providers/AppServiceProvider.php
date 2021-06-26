@@ -25,7 +25,6 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot(){
-        $doc =DB::table('question_reports')->orderBy('type','desc')->get();
-        View::share('QAll',$doc);
+
     }
 }

@@ -80,9 +80,8 @@ Route::post('/orders', [OrderController::class, 'store']);
 Route::get('/allorder', [OrderController::class, 'index']);
 Route::post('/orderdetail', [OrderController::class, 'orderdetail']);
 
-Route::post('/callback', [OrderController::class, 'callback']);
 Route::get('/success', [OrderController::class, 'redirectFromECpay']);
-
+Route::post('/callback', [OrderController::class, 'callback']);
 
 // 問題功能相關
 //顯示要修改問題、修改問題上傳

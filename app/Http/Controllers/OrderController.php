@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use ECPay_PaymentMethod as ECPayMethod;
 use ECPay_AllInOne as ECPay;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as Middleware;
 
 class OrderController extends Controller
 {
@@ -62,9 +63,9 @@ class OrderController extends Controller
             $obj->EncryptType = '1';                                                           //CheckMacValue加密類型，請固定填入1，使用SHA256加密
             //基本參數(請依系統規劃自行調整)
             $MerchantTradeNo = $uuid_temp ;
-            $obj->Send['ReturnURL']         = "https://c3f3d65e9a5a.ngrok.io/callback" ;    //付款完成通知回傳的網址
-            $obj->Send['PeriodReturnURL']         = "https://c3f3d65e9a5a.ngrok.io/callback" ;    //付款完成通知回傳的網址
-            $obj->Send['ClientBackURL'] = "https://c3f3d65e9a5a.ngrok.io/success" ;    //付款完成通知回傳的網址
+            $obj->Send['ReturnURL']         = "http://82ab5676781b.ngrok.io/callback" ;    //付款完成通知回傳的網址
+            $obj->Send['PeriodReturnURL']         = "http://82ab5676781b.ngrok.io/callback" ;    //付款完成通知回傳的網址
+            $obj->Send['ClientBackURL'] = "http://82ab5676781b.ngrok.io/success" ;    //付款完成通知回傳的網址
             $obj->Send['MerchantTradeNo']   = $MerchantTradeNo;                          //訂單編號
             $obj->Send['MerchantTradeDate'] = date('Y/m/d H:i:s');                       //交易時間
             $obj->Send['TotalAmount']       = request('tolprice');                    //交易金額
@@ -86,7 +87,7 @@ class OrderController extends Controller
     public function callback()
     {
         $data = DB::table('orders')
-              ->where('uuid', 'a992a645117e4ffa')
+              ->where('uuid', request('MerchantTradeNo'))
               ->update([
                 'paid' => '1',
             ]); 
@@ -94,11 +95,6 @@ class OrderController extends Controller
     }
  
     public function redirectFromECpay () {
-        $data = DB::table('orders')
-              ->where('uuid', 'a992a645117e4ffa')
-              ->update([
-                'paid' => '1',
-            ]); 
         session()->flash('success', 'Order success!');
         return redirect('http://127.0.0.1:8000/allorder');
     }
