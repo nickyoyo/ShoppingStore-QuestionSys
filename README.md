@@ -1,7 +1,7 @@
 # Laravel 8 後端作品
 
 ## 使用技術
-* HTML，CSS，PHP
+* HTML，CSS，PHP，Bootstrap
 * Laravel 8 Framework
 * MySQL Database
 
