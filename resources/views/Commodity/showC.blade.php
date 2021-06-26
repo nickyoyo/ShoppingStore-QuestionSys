@@ -54,7 +54,7 @@
     <td class="textw5 text-a-center">{{$test1->price}}&nbsp;
     <td class="textw5 text-a-center">{{$test1->productnum}}&nbsp;
     <td class="textw30 text-a-left">&nbsp;{{$test1->description}}<br>
-    <td class="textw20 text-a-left">&nbsp;<img src=""><img src="{{ URL::asset('storage/'.$test1->image_path) }}"/><br>
+    <td class="textw20 text-a-left">&nbsp;<img src="{{ URL::asset('storage/'.$test1->image_path) }}"/><br>
     </tr>
     @endforeach
 </table>

@@ -8,6 +8,7 @@ use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\buycarController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 use Intervention\Image\Facades\Image;
 
 
@@ -72,6 +73,15 @@ Route::post('/addProduct/{productId}',[CartController::class, 'addItem'])->name(
 Route::post('/addbuttom/{productId}',[CartController::class, 'addbuttom'])->name('addbuttom');
 Route::post('/minusbuttom/{productId}',[CartController::class, 'minusbuttom'])->name('minusbuttom');
 Route::get('/removeItem/{productId}', [CartController::class, 'removeItem']);
+
+//購物車訂單、串接綠界金流
+Route::get('/order/new', [OrderController::class, 'new']);
+Route::post('/orders', [OrderController::class, 'store']);
+Route::get('/allorder', [OrderController::class, 'index']);
+Route::post('/orderdetail', [OrderController::class, 'orderdetail']);
+
+Route::post('/callback', [OrderController::class, 'callback']);
+Route::get('/success', [OrderController::class, 'redirectFromECpay']);
 
 
 // 問題功能相關

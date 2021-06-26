@@ -136,7 +136,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Laravel 商店</a>
+                <a class="navbar-brand" href="/Commodity">Laravel 商店</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
@@ -144,7 +144,7 @@
                         <li><a href="/login">登入</a></li>
                         <li><a href="/register">註冊</a></li>
                     @else
-                        <li><a href="/order">我的訂單 <span class="fa fa-briefcase"></span></a></li>
+                        <li><a href="/allorder">我的訂單 <span class="fa fa-briefcase"></span></a></li>
                         <li><a href="/Cart">購物車 <span class="fa fa-shopping-cart"></span></a></li>
                         <li><a>{{ Auth::user()->name }}   <span class="d-none"></span></a></li>
                         <li><a  href="{{ route('logout') }}"

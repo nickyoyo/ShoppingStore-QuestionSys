@@ -72,7 +72,7 @@
                             </button>
                         </a></td>
                     <td>
-                    <a href="/Commodity">  <button type="button" class="btn btn-success">
+                    <a href="/order/new">  <button type="button" class="btn btn-success">
                             總結 <span class="fa fa-play"></span>
                               </button></a> </td>
                 </tr>
