@@ -42,23 +42,18 @@ Route::get('/logout', function () {
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
-
 // 商品功能相關
 //顯示個人商品、搜尋個人商品
 Route::get('/Commodity/personal/{account}',[commodityController::class, 'showAccountProduct']);
 Route::get('/Commodity/personal',[commodityController::class, 'searchAccountProduct']);
-
 //顯示要修改商品、修改商品上傳
 Route::post('/showC/{id}',[commodityController::class, 'showC'])->name('showC');
 Route::post('/changeC',[commodityController::class, 'changeC'])->name('changeC');
-
 //上傳-修改圖片
 Route::post('/changeImage/{id}',[commodityController::class, 'changeImage'])->name('changeImage');
 Route::post('/changeImage',[commodityController::class, 'changeImageupload'])->name('changeImageupload');
-
 //顯示所有商品
 Route::get('/Commodity',[commodityController::class, 'Commodity']);
-
 //新增商品、上傳商品
 Route::get('/create',[commodityController::class, 'create']);
 Route::post('/Upload',[commodityController::class, 'Upload'])->name('senddata');
@@ -66,14 +61,12 @@ Route::post('/Upload',[commodityController::class, 'Upload'])->name('senddata');
 Route::get('/search',[commodityController::class, 'search']);
 //刪除商品
 Route::delete('/del/{id}',[commodityController::class, 'deleteC'])->name('delC');
-
 // //購物車
 Route::get('/Cart',[CartController::class, 'showCart']);
 Route::post('/addProduct/{productId}',[CartController::class, 'addItem'])->name('additem');
 Route::post('/addbuttom/{productId}',[CartController::class, 'addbuttom'])->name('addbuttom');
 Route::post('/minusbuttom/{productId}',[CartController::class, 'minusbuttom'])->name('minusbuttom');
 Route::get('/removeItem/{productId}', [CartController::class, 'removeItem']);
-
 //購物車訂單、串接綠界金流
 Route::get('/order/new', [OrderController::class, 'new']);
 Route::post('/orders', [OrderController::class, 'store']);

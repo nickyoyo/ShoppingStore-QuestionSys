@@ -63,9 +63,9 @@ class OrderController extends Controller
             $obj->EncryptType = '1';                                                           //CheckMacValue加密類型，請固定填入1，使用SHA256加密
             //基本參數(請依系統規劃自行調整)
             $MerchantTradeNo = $uuid_temp ;
-            $obj->Send['ReturnURL']         = "http://82ab5676781b.ngrok.io/callback" ;    //付款完成通知回傳的網址
-            $obj->Send['PeriodReturnURL']         = "http://82ab5676781b.ngrok.io/callback" ;    //付款完成通知回傳的網址
-            $obj->Send['ClientBackURL'] = "http://82ab5676781b.ngrok.io/success" ;    //付款完成通知回傳的網址
+            $obj->Send['ReturnURL']         = "https://7d0962d13459.ngrok.io/callback" ;    //付款完成通知回傳的網址
+            $obj->Send['PeriodReturnURL']         = "https://7d0962d13459.ngrok.io/callback" ;    //付款完成通知回傳的網址
+            $obj->Send['ClientBackURL'] = "https://7d0962d13459.ngrok.io/success" ;    //付款完成通知回傳的網址
             $obj->Send['MerchantTradeNo']   = $MerchantTradeNo;                          //訂單編號
             $obj->Send['MerchantTradeDate'] = date('Y/m/d H:i:s');                       //交易時間
             $obj->Send['TotalAmount']       = request('tolprice');                    //交易金額
@@ -91,7 +91,6 @@ class OrderController extends Controller
               ->update([
                 'paid' => '1',
             ]); 
-        return redirect('http://127.0.0.1:8000/');
     }
  
     public function redirectFromECpay () {

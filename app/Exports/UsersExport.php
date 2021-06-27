@@ -23,13 +23,16 @@ namespace App\Exports;
 use App\Models\question_reports;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
+use Illuminate\Support\Facades\DB;
 
 class UsersExport implements FromView
 {
+    
     public function view(): View
     {
         return view('Question.Questiontable', [
-            'Question' => question_reports::all()
+            'Question' => question_reports::all(),
+            'QAll' => DB::table('question_reports')->orderBy('type','desc')->get(),
         ]);
     }
 }
