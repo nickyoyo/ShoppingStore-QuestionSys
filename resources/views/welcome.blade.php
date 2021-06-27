@@ -7,10 +7,12 @@
                 <div class="topic">
                     <img src="/img/Topic.JPG" width="600" height="400" alt="test">            
                </div>
-               @isset(Auth::user()->email)
-                <a href="/create" class="back"  style="color:black">新增商品</a><p>
-                <a href="/createQ" class="back"  style="color:black">新增問題回報</a>
-               @endisset
+               @if(isset(Auth::user()->email))
+                <li><a href="/create" class="back"  style="color:black">新增商品</a><br>
+                <li><a href="/createQ" class="back"  style="color:black">新增問題回報</a>
+               @else
+               <br><br>             
+               @endif
                <div class="topicwel" >
 
                     <a href="/Cart" class="back"  style="color:black">TTest car</a> 

@@ -125,6 +125,12 @@
                 font-weight:solid;
                 font-size:20px;
             }
+            footer {
+                background: #444444;
+                height: 15px;
+                font-family: 'Open Sans', sans-serif;
+                color: black;
+            }
         </style>
 @livewireStyles
 <link href="/css/main.css" rel="stylesheet">
@@ -166,7 +172,7 @@
                     </ul>    
                     @livewireScripts
                     @yield('content')   
-    <footer style="position: relative;bottom:0%;width:100%; ">
+    <footer style="position: relative;bottom:0%;width:100%;">
           Copyright 2021 Buy&Sell  
     </footer>
 </body>
